@@ -1,0 +1,2 @@
+# XYWebImage
+用SQLite和dispatch_semaphore重写SDWebImage的缓存(SQLite用于持久化存储、dispatch_semaphore锁来存取内存缓存)
