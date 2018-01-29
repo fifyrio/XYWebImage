@@ -53,7 +53,7 @@ static NSString * const kXYTableViewCell = @"XYTableViewCell";
     NSURL *imageUrl = [NSURL URLWithString:dict[@"url"]];
     
 //    [cell.photoImageView sl_setImageWithURL:imageUrl];
-//    [cell.photoImageView sd_setImageWithURL:imageUrl];
+    [cell.photoImageView sd_setImageWithURL:imageUrl];
     [cell.photoImageView setImageWithURL:imageUrl];
     
     return cell;
