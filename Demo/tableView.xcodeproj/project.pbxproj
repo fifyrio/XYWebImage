@@ -37,6 +37,10 @@
 		CC37A37D20134085008A821D /* XYSelfTestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CC37A37C20134085008A821D /* XYSelfTestTool.m */; };
 		CC37A38B20134A69008A821D /* UIImageView+SLAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC37A38A20134A69008A821D /* UIImageView+SLAsyncImageView.m */; };
 		CC61248F1C34D49F00744BD1 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61248E1C34D49F00744BD1 /* UIColor+HexColor.m */; };
+		CCF6FD01201EECED001F46F2 /* BarrierTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF6FCFF201EECED001F46F2 /* BarrierTestViewController.m */; };
+		CCF6FD02201EECED001F46F2 /* BarrierTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF6FD00201EECED001F46F2 /* BarrierTestViewController.xib */; };
+		CCF6FD07201F2082001F46F2 /* NSURLSesstionTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF6FD05201F2082001F46F2 /* NSURLSesstionTestViewController.m */; };
+		CCF6FD08201F2082001F46F2 /* NSURLSesstionTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF6FD06201F2082001F46F2 /* NSURLSesstionTestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,12 @@
 		CC61248D1C34D49F00744BD1 /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
 		CC61248E1C34D49F00744BD1 /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
 		CCC17A431C1A779F0005B29A /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		CCF6FCFE201EECED001F46F2 /* BarrierTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarrierTestViewController.h; sourceTree = "<group>"; };
+		CCF6FCFF201EECED001F46F2 /* BarrierTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarrierTestViewController.m; sourceTree = "<group>"; };
+		CCF6FD00201EECED001F46F2 /* BarrierTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarrierTestViewController.xib; sourceTree = "<group>"; };
+		CCF6FD04201F2082001F46F2 /* NSURLSesstionTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLSesstionTestViewController.h; sourceTree = "<group>"; };
+		CCF6FD05201F2082001F46F2 /* NSURLSesstionTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLSesstionTestViewController.m; sourceTree = "<group>"; };
+		CCF6FD06201F2082001F46F2 /* NSURLSesstionTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NSURLSesstionTestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +201,8 @@
 				CC37A36F20133DFB008A821D /* XYTableViewCell.h */,
 				CC37A37020133DFB008A821D /* XYTableViewCell.m */,
 				CC37A37120133DFB008A821D /* XYTableViewCell.xib */,
+				CCF6FD03201F2073001F46F2 /* NSURLSesstionTest */,
+				CCF6FCFD201EECCA001F46F2 /* barrier */,
 				CC37A38820134A4A008A821D /* SLAsyncImageView */,
 				CC0E42731D655A6A00A8F8F5 /* Launch.xib */,
 				4EA73B4B19E14296003189D0 /* Images.xcassets */,
@@ -255,6 +267,26 @@
 				CC37A38A20134A69008A821D /* UIImageView+SLAsyncImageView.m */,
 			);
 			path = SLAsyncImageView;
+			sourceTree = "<group>";
+		};
+		CCF6FCFD201EECCA001F46F2 /* barrier */ = {
+			isa = PBXGroup;
+			children = (
+				CCF6FCFE201EECED001F46F2 /* BarrierTestViewController.h */,
+				CCF6FCFF201EECED001F46F2 /* BarrierTestViewController.m */,
+				CCF6FD00201EECED001F46F2 /* BarrierTestViewController.xib */,
+			);
+			path = barrier;
+			sourceTree = "<group>";
+		};
+		CCF6FD03201F2073001F46F2 /* NSURLSesstionTest */ = {
+			isa = PBXGroup;
+			children = (
+				CCF6FD04201F2082001F46F2 /* NSURLSesstionTestViewController.h */,
+				CCF6FD05201F2082001F46F2 /* NSURLSesstionTestViewController.m */,
+				CCF6FD06201F2082001F46F2 /* NSURLSesstionTestViewController.xib */,
+			);
+			path = NSURLSesstionTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +373,7 @@
 				4E9EAE4D19E3EDC0005C228B /* defaultAvatar.png in Resources */,
 				4E9EAE7019E40BEB005C228B /* text_bg.png in Resources */,
 				4ED309BF1BC7D82C00790631 /* apple.jpg in Resources */,
+				CCF6FD02201EECED001F46F2 /* BarrierTestViewController.xib in Resources */,
 				4E9EAE4E19E3EDC0005C228B /* defaultAvatar@2x.png in Resources */,
 				CC0E42741D655A6A00A8F8F5 /* Launch.xib in Resources */,
 				4E1A6F801BC7D15100869354 /* MainViewController.xib in Resources */,
@@ -348,6 +381,7 @@
 				4E9EAE7119E40BEB005C228B /* text_bg@2x.png in Resources */,
 				CC37A37320133DFB008A821D /* XYTableViewCell.xib in Resources */,
 				4EA73B4C19E14296003189D0 /* Images.xcassets in Resources */,
+				CCF6FD08201F2082001F46F2 /* NSURLSesstionTestViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,9 +455,11 @@
 				4E1A6F7F1BC7D15100869354 /* MainViewController.m in Sources */,
 				CC37A37920134058008A821D /* YYFPSLabel.m in Sources */,
 				4E7D1FC01BD0A0E900B84BBE /* NSTimer+Addition.m in Sources */,
+				CCF6FD01201EECED001F46F2 /* BarrierTestViewController.m in Sources */,
 				CC37A37220133DFB008A821D /* XYTableViewCell.m in Sources */,
 				CC37A37A20134058008A821D /* YYWeakProxy.m in Sources */,
 				CC37A37D20134085008A821D /* XYSelfTestTool.m in Sources */,
+				CCF6FD07201F2082001F46F2 /* NSURLSesstionTestViewController.m in Sources */,
 				4EA73B4619E14296003189D0 /* main.m in Sources */,
 				4E7D1FC21BD0A0E900B84BBE /* UIFactionary.m in Sources */,
 				CC61248F1C34D49F00744BD1 /* UIColor+HexColor.m in Sources */,

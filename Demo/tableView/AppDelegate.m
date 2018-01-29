@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "XYSelfTestTool.h"
+#import "BarrierTestViewController.h"
+#import "NSURLSesstionTestViewController.h"
 
 @implementation AppDelegate
 
@@ -19,7 +21,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
             
-    MainViewController* mainVC = [[MainViewController alloc] init];
+    NSURLSesstionTestViewController* mainVC = [[NSURLSesstionTestViewController alloc] init];
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = navVC;
     
