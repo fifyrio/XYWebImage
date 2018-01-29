@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E000799201E0C60006FA789 /* SLAsyncImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E000798201E0C60006FA789 /* SLAsyncImageCompat.m */; };
+		4E00079B201E17AC006FA789 /* 321561508582151.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E00079A201E17AC006FA789 /* 321561508582151.jpg */; };
 		4E1A6F7F1BC7D15100869354 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A6F7D1BC7D15100869354 /* MainViewController.m */; };
 		4E1A6F801BC7D15100869354 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1A6F7E1BC7D15100869354 /* MainViewController.xib */; };
 		4E7D1FC01BD0A0E900B84BBE /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D1FBA1BD0A0E900B84BBE /* NSTimer+Addition.m */; };
@@ -51,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		037B00E941BA4E11C6B07870 /* Pods-tableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-tableView/Pods-tableView.release.xcconfig"; sourceTree = "<group>"; };
+		4E000797201E0C60006FA789 /* SLAsyncImageCompat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLAsyncImageCompat.h; sourceTree = "<group>"; };
+		4E000798201E0C60006FA789 /* SLAsyncImageCompat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLAsyncImageCompat.m; sourceTree = "<group>"; };
+		4E00079A201E17AC006FA789 /* 321561508582151.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 321561508582151.jpg; sourceTree = "<group>"; };
 		4E1A6F7C1BC7D15100869354 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		4E1A6F7D1BC7D15100869354 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		4E1A6F7E1BC7D15100869354 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -191,6 +196,7 @@
 				CC37A36F20133DFB008A821D /* XYTableViewCell.h */,
 				CC37A37020133DFB008A821D /* XYTableViewCell.m */,
 				CC37A37120133DFB008A821D /* XYTableViewCell.xib */,
+				4E00079A201E17AC006FA789 /* 321561508582151.jpg */,
 				CC37A38820134A4A008A821D /* SLAsyncImageView */,
 				CC0E42731D655A6A00A8F8F5 /* Launch.xib */,
 				4EA73B4B19E14296003189D0 /* Images.xcassets */,
@@ -253,6 +259,8 @@
 			children = (
 				CC37A38920134A69008A821D /* UIImageView+SLAsyncImageView.h */,
 				CC37A38A20134A69008A821D /* UIImageView+SLAsyncImageView.m */,
+				4E000797201E0C60006FA789 /* SLAsyncImageCompat.h */,
+				4E000798201E0C60006FA789 /* SLAsyncImageCompat.m */,
 			);
 			path = SLAsyncImageView;
 			sourceTree = "<group>";
@@ -338,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E00079B201E17AC006FA789 /* 321561508582151.jpg in Resources */,
 				4E9EAE4D19E3EDC0005C228B /* defaultAvatar.png in Resources */,
 				4E9EAE7019E40BEB005C228B /* text_bg.png in Resources */,
 				4ED309BF1BC7D82C00790631 /* apple.jpg in Resources */,
@@ -392,7 +401,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FC636CDAB135F2C9BBF7B0D8 /* [CP] Embed Pods Frameworks */ = {
@@ -418,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EA73B4A19E14296003189D0 /* AppDelegate.m in Sources */,
+				4E000799201E0C60006FA789 /* SLAsyncImageCompat.m in Sources */,
 				4E1A6F7F1BC7D15100869354 /* MainViewController.m in Sources */,
 				CC37A37920134058008A821D /* YYFPSLabel.m in Sources */,
 				4E7D1FC01BD0A0E900B84BBE /* NSTimer+Addition.m in Sources */,

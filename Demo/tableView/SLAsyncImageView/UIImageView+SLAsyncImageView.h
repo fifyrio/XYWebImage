@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SLAsyncImageCompat.h"
 
 @interface UIImageView (SLAsyncImageView)
 

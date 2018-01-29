@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="coverImageView" destination="VUj-C1-RjF" id="bsk-qg-Wfj"/>
                 <outlet property="tableView" destination="3xw-d9-Uc8" id="FkJ-56-uMv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,13 +29,38 @@
                         <outlet property="delegate" destination="-1" id="Fvn-yR-cai"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kG-d5-S9p">
+                    <rect key="frame" x="164" y="438" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="set"/>
+                    <connections>
+                        <action selector="onclickSet:" destination="-1" eventType="touchUpInside" id="AyY-Wn-MAv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jS-Rp-PMs">
+                    <rect key="frame" x="164" y="490" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="get"/>
+                    <connections>
+                        <action selector="onclickGet:" destination="-1" eventType="touchUpInside" id="TUQ-Je-HKh"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VUj-C1-RjF">
+                    <rect key="frame" x="0.0" y="66" width="375" height="246"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="246" id="ODG-bN-bcN"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <color key="tintColor" red="0.50196081399917603" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="3xw-d9-Uc8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1ev-W5-ufU"/>
+                <constraint firstItem="VUj-C1-RjF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6W0-0K-R2g"/>
                 <constraint firstAttribute="trailing" secondItem="3xw-d9-Uc8" secondAttribute="trailing" id="KIM-70-XVV"/>
+                <constraint firstItem="VUj-C1-RjF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="66" id="N8A-Z7-kcm"/>
                 <constraint firstAttribute="bottom" secondItem="3xw-d9-Uc8" secondAttribute="bottom" id="TzN-tX-U8I"/>
+                <constraint firstAttribute="trailing" secondItem="VUj-C1-RjF" secondAttribute="trailing" id="Xsd-Ds-kcN"/>
                 <constraint firstItem="3xw-d9-Uc8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hCW-SO-Hna"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="51.5"/>

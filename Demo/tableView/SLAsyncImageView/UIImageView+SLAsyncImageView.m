@@ -13,6 +13,11 @@
 - (void)sl_setImageWithURL:(NSURL *)url{
     __block UIImage *image;
     
+    dispatch_main_async_safely(^{
+        NSLog(@"xxoo");
+        }
+    );
+    
     dispatch_queue_t asyncQueue = dispatch_queue_create("SLImageDownloadQueue", NULL);
     dispatch_async(asyncQueue, ^{
         NSError *error;
