@@ -17,8 +17,6 @@ static NSString * const kXYTableViewCell = @"XYTableViewCell";
 @interface MainViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSMutableArray *dataArray;
-@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
-@property (nonatomic, strong) NSCache *cache;
 @end
 
 @implementation MainViewController
@@ -26,9 +24,6 @@ static NSString * const kXYTableViewCell = @"XYTableViewCell";
 #pragma mark - Life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _cache = [[NSCache alloc] init];
-    _cache.countLimit = 5;
     
     NSMutableArray *arr = @[].mutableCopy;
     for (NSInteger i = 0; i < 1000; i ++) {
@@ -59,8 +54,7 @@ static NSString * const kXYTableViewCell = @"XYTableViewCell";
     
 //    [cell.photoImageView sl_setImageWithURL:imageUrl];
     [cell.photoImageView sd_setImageWithURL:imageUrl];
-//    [cell.photoImageView setImageWithURL:imageUrl];
-    
+    [cell.photoImageView setImageWithURL:imageUrl];
     
     return cell;
 }
@@ -69,19 +63,6 @@ static NSString * const kXYTableViewCell = @"XYTableViewCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *dict = self.dataArray[indexPath.row];
     return [dict[@"height"] floatValue];
-}
-- (IBAction)onclickSet:(id)sender {
-    static int i = 0;
-    NSString *path = [NSHomeDirectory() stringByAppendingString:@"/Documents/321561508582151.jpg"];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    [self.cache setObject:data forKey:[NSString stringWithFormat:@"img-%d", i]];
-    i ++;
-}
-- (IBAction)onclickGet:(id)sender {
-    static int i = 0;
-    NSData *data = [self.cache objectForKey:[NSString stringWithFormat:@"img-%d", i]];
-    UIImage *image = [UIImage imageWithData:data];
-    self.coverImageView.image = image;
 }
 
 #pragma mark - Memory
