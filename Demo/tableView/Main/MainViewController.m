@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "XYTableViewCell.h"
-#import "UIImageView+SLAsyncImageView.h"
+#import "UIImageView+XYAsyncImageView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIImageView+AFNetworking.h"
 
@@ -54,7 +54,7 @@ static NSString * const kXYTableViewCell = @"XYTableViewCell";
     
 //    [cell.photoImageView sl_setImageWithURL:imageUrl];
     [cell.photoImageView sd_setImageWithURL:imageUrl];
-    [cell.photoImageView setImageWithURL:imageUrl];
+//    [cell.photoImageView setImageWithURL:imageUrl];
     
     return cell;
 }

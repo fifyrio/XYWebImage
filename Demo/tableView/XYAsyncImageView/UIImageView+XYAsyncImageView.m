@@ -6,11 +6,11 @@
 //  Copyright © 2018年 Kingnet. All rights reserved.
 //
 
-#import "UIImageView+SLAsyncImageView.h"
+#import "UIImageView+XYAsyncImageView.h"
 
 @implementation UIImageView (SLAsyncImageView)
 
-- (void)sl_setImageWithURL:(NSURL *)url{
+- (void)xy_setImageWithURL:(NSURL *)url{
     __block UIImage *image;
     
     dispatch_main_async_safely(^{
@@ -18,7 +18,7 @@
         }
     );
     
-    dispatch_queue_t asyncQueue = dispatch_queue_create("SLImageDownloadQueue", NULL);
+    dispatch_queue_t asyncQueue = dispatch_queue_create("XYImageDownloadQueue", NULL);
     dispatch_async(asyncQueue, ^{
         NSError *error;
         NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];

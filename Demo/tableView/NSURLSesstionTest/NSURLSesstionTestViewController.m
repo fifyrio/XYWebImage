@@ -24,6 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    /* dispatch_apply相当于一个for循环
+    dispatch_apply(6, dispatch_get_global_queue(0, 0), ^(size_t i) {
+        [NSThread sleepForTimeInterval:arc4random()%5];
+        NSLog(@"线程: %@ 第%zu次", [NSThread currentThread], i);
+    });
+    NSLog(@"结束");
+     */
 }
 
 - (IBAction)onclickRun:(id)sender {

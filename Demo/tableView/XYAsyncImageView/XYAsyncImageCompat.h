@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SLAsyncImageCompat : NSObject
+@interface XYAsyncImageCompat : NSObject
 
 #define dispatch_main_async_safely(block)\
 if ([NSThread isMainThread]){\

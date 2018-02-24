@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YYWebImageTestController">
+            <connections>
+                <outlet property="imageView" destination="mIc-sA-1ao" id="faO-AM-mob"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mIc-sA-1ao">
+                    <rect key="frame" x="0.0" y="64" width="375" height="400"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="400" id="dUU-ai-HBz"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJs-gJ-9Hu">
+                    <rect key="frame" x="231" y="605" width="94" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Twn-dd-4p1"/>
+                        <constraint firstAttribute="width" constant="94" id="gUa-DU-sTx"/>
+                    </constraints>
+                    <state key="normal" title="清除缓存">
+                        <color key="titleColor" red="1" green="0.31372549020000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onclickClear:" destination="-1" eventType="touchUpInside" id="ptF-xf-hai"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pb2-Dr-si4">
+                    <rect key="frame" x="127" y="605" width="120" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="kvh-vP-5hP"/>
+                        <constraint firstAttribute="width" constant="120" id="lLI-wp-iQk"/>
+                    </constraints>
+                    <state key="normal" title="下载"/>
+                    <connections>
+                        <action selector="onclickRun:" destination="-1" eventType="touchUpInside" id="yAd-cS-X9j"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NJs-gJ-9Hu" secondAttribute="trailing" constant="50" id="3Vv-uu-8u0"/>
+                <constraint firstItem="pb2-Dr-si4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7by-BH-UFM"/>
+                <constraint firstAttribute="bottom" secondItem="pb2-Dr-si4" secondAttribute="bottom" constant="32" id="PuH-h9-wRN"/>
+                <constraint firstItem="mIc-sA-1ao" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="XQD-AN-ob3"/>
+                <constraint firstAttribute="trailing" secondItem="mIc-sA-1ao" secondAttribute="trailing" id="ebK-pT-hMS"/>
+                <constraint firstItem="mIc-sA-1ao" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jis-ZR-jLK"/>
+                <constraint firstAttribute="bottom" secondItem="NJs-gJ-9Hu" secondAttribute="bottom" constant="32" id="rVy-ye-GF1"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="84.5"/>
+        </view>
+    </objects>
+</document>

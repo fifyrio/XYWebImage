@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SLAsyncImageCompat.h"
+#import "XYAsyncImageCompat.h"
 
-@interface UIImageView (SLAsyncImageView)
+@interface UIImageView (XYAsyncImageView)
 
-- (void)sl_setImageWithURL:(NSURL *)url;
+- (void)xy_setImageWithURL:(NSURL *)url;
 
 @end

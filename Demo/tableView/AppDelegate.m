@@ -11,6 +11,9 @@
 #import "XYSelfTestTool.h"
 #import "BarrierTestViewController.h"
 #import "NSURLSesstionTestViewController.h"
+#import "NSOperationTestViewController.h"
+#import "ImageIOTestViewController.h"
+#import "YYWebImageTestController.h"
 
 @implementation AppDelegate
 
@@ -21,7 +24,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
             
-    NSURLSesstionTestViewController* mainVC = [[NSURLSesstionTestViewController alloc] init];
+    YYWebImageTestController* mainVC = [[YYWebImageTestController alloc] init];
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = navVC;
     

@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E000799201E0C60006FA789 /* SLAsyncImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E000798201E0C60006FA789 /* SLAsyncImageCompat.m */; };
 		4E00079B201E17AC006FA789 /* 321561508582151.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E00079A201E17AC006FA789 /* 321561508582151.jpg */; };
-		4E1A6F7F1BC7D15100869354 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A6F7D1BC7D15100869354 /* MainViewController.m */; };
-		4E1A6F801BC7D15100869354 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1A6F7E1BC7D15100869354 /* MainViewController.xib */; };
 		4E7D1FC01BD0A0E900B84BBE /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D1FBA1BD0A0E900B84BBE /* NSTimer+Addition.m */; };
 		4E7D1FC21BD0A0E900B84BBE /* UIFactionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D1FBF1BD0A0E900B84BBE /* UIFactionary.m */; };
 		4E9EAE4D19E3EDC0005C228B /* defaultAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9EAE4B19E3EDC0005C228B /* defaultAvatar.png */; };
@@ -32,13 +29,27 @@
 		4ED309BF1BC7D82C00790631 /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4ED309BE1BC7D82C00790631 /* apple.jpg */; };
 		C3AAC25B657F3907BD6D025E /* libPods-tableView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B581DB751070C45E3574E3E6 /* libPods-tableView.a */; };
 		CC0E42741D655A6A00A8F8F5 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC0E42731D655A6A00A8F8F5 /* Launch.xib */; };
-		CC37A37220133DFB008A821D /* XYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC37A37020133DFB008A821D /* XYTableViewCell.m */; };
-		CC37A37320133DFB008A821D /* XYTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC37A37120133DFB008A821D /* XYTableViewCell.xib */; };
+		CC316F02203FC58D0030D015 /* YYWebImageTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC316F00203FC58D0030D015 /* YYWebImageTestController.m */; };
+		CC316F03203FC58D0030D015 /* YYWebImageTestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC316F01203FC58D0030D015 /* YYWebImageTestController.xib */; };
+		CC316F072040213E0030D015 /* XYWebImageSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = CC316F062040213E0030D015 /* XYWebImageSetter.m */; };
+		CC316F0A204025BB0030D015 /* XYWebImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC316F09204025BB0030D015 /* XYWebImageOperation.m */; };
+		CC316F122041010F0030D015 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC316F0D2041010F0030D015 /* MainViewController.m */; };
+		CC316F132041010F0030D015 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC316F0E2041010F0030D015 /* MainViewController.xib */; };
+		CC316F142041010F0030D015 /* XYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC316F102041010F0030D015 /* XYTableViewCell.m */; };
+		CC316F152041010F0030D015 /* XYTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC316F112041010F0030D015 /* XYTableViewCell.xib */; };
 		CC37A37920134058008A821D /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC37A37620134058008A821D /* YYFPSLabel.m */; };
 		CC37A37A20134058008A821D /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC37A37820134058008A821D /* YYWeakProxy.m */; };
 		CC37A37D20134085008A821D /* XYSelfTestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CC37A37C20134085008A821D /* XYSelfTestTool.m */; };
-		CC37A38B20134A69008A821D /* UIImageView+SLAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC37A38A20134A69008A821D /* UIImageView+SLAsyncImageView.m */; };
 		CC61248F1C34D49F00744BD1 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61248E1C34D49F00744BD1 /* UIColor+HexColor.m */; };
+		CC637A3E202019C50087F303 /* UIImageView+XYAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC637A3B202019C50087F303 /* UIImageView+XYAsyncImageView.m */; };
+		CC637A3F202019C50087F303 /* XYAsyncImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = CC637A3D202019C50087F303 /* XYAsyncImageCompat.m */; };
+		CC637A42202019F00087F303 /* XYWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CC637A41202019F00087F303 /* XYWebImageDownloader.m */; };
+		CC637A4520204B750087F303 /* XYWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC637A4420204B750087F303 /* XYWebImageDownloaderOperation.m */; };
+		CC637A4A20204ECC0087F303 /* NSOperationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC637A4820204ECC0087F303 /* NSOperationTestViewController.m */; };
+		CC637A4B20204ECC0087F303 /* NSOperationTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC637A4920204ECC0087F303 /* NSOperationTestViewController.xib */; };
+		CC637A5020207D310087F303 /* ImageIOTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC637A4E20207D310087F303 /* ImageIOTestViewController.m */; };
+		CC637A5120207D310087F303 /* ImageIOTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC637A4F20207D310087F303 /* ImageIOTestViewController.xib */; };
+		CC637A5320207D530087F303 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC637A5220207D530087F303 /* ImageIO.framework */; };
 		CCF6FD01201EECED001F46F2 /* BarrierTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF6FCFF201EECED001F46F2 /* BarrierTestViewController.m */; };
 		CCF6FD02201EECED001F46F2 /* BarrierTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF6FD00201EECED001F46F2 /* BarrierTestViewController.xib */; };
 		CCF6FD07201F2082001F46F2 /* NSURLSesstionTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF6FD05201F2082001F46F2 /* NSURLSesstionTestViewController.m */; };
@@ -57,12 +68,7 @@
 
 /* Begin PBXFileReference section */
 		037B00E941BA4E11C6B07870 /* Pods-tableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-tableView/Pods-tableView.release.xcconfig"; sourceTree = "<group>"; };
-		4E000797201E0C60006FA789 /* SLAsyncImageCompat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLAsyncImageCompat.h; sourceTree = "<group>"; };
-		4E000798201E0C60006FA789 /* SLAsyncImageCompat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLAsyncImageCompat.m; sourceTree = "<group>"; };
 		4E00079A201E17AC006FA789 /* 321561508582151.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 321561508582151.jpg; sourceTree = "<group>"; };
-		4E1A6F7C1BC7D15100869354 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		4E1A6F7D1BC7D15100869354 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		4E1A6F7E1BC7D15100869354 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		4E7D1FB91BD0A0E900B84BBE /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
 		4E7D1FBA1BD0A0E900B84BBE /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		4E7D1FBD1BD0A0E900B84BBE /* CANSTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANSTS.h; sourceTree = "<group>"; };
@@ -92,19 +98,42 @@
 		6411D3D1F242D69CEEDB45E3 /* Pods-tableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tableView/Pods-tableView.debug.xcconfig"; sourceTree = "<group>"; };
 		B581DB751070C45E3574E3E6 /* libPods-tableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tableView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0E42731D655A6A00A8F8F5 /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
-		CC37A36F20133DFB008A821D /* XYTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYTableViewCell.h; sourceTree = "<group>"; };
-		CC37A37020133DFB008A821D /* XYTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYTableViewCell.m; sourceTree = "<group>"; };
-		CC37A37120133DFB008A821D /* XYTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XYTableViewCell.xib; sourceTree = "<group>"; };
+		CC316EFF203FC58D0030D015 /* YYWebImageTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWebImageTestController.h; sourceTree = "<group>"; };
+		CC316F00203FC58D0030D015 /* YYWebImageTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWebImageTestController.m; sourceTree = "<group>"; };
+		CC316F01203FC58D0030D015 /* YYWebImageTestController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYWebImageTestController.xib; sourceTree = "<group>"; };
+		CC316F052040213E0030D015 /* XYWebImageSetter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWebImageSetter.h; sourceTree = "<group>"; };
+		CC316F062040213E0030D015 /* XYWebImageSetter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYWebImageSetter.m; sourceTree = "<group>"; };
+		CC316F08204025BB0030D015 /* XYWebImageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWebImageOperation.h; sourceTree = "<group>"; };
+		CC316F09204025BB0030D015 /* XYWebImageOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYWebImageOperation.m; sourceTree = "<group>"; };
+		CC316F0C2041010F0030D015 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		CC316F0D2041010F0030D015 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		CC316F0E2041010F0030D015 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		CC316F0F2041010F0030D015 /* XYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYTableViewCell.h; sourceTree = "<group>"; };
+		CC316F102041010F0030D015 /* XYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYTableViewCell.m; sourceTree = "<group>"; };
+		CC316F112041010F0030D015 /* XYTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYTableViewCell.xib; sourceTree = "<group>"; };
 		CC37A37520134058008A821D /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		CC37A37620134058008A821D /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		CC37A37720134058008A821D /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		CC37A37820134058008A821D /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 		CC37A37B20134085008A821D /* XYSelfTestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYSelfTestTool.h; sourceTree = "<group>"; };
 		CC37A37C20134085008A821D /* XYSelfTestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYSelfTestTool.m; sourceTree = "<group>"; };
-		CC37A38920134A69008A821D /* UIImageView+SLAsyncImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SLAsyncImageView.h"; sourceTree = "<group>"; };
-		CC37A38A20134A69008A821D /* UIImageView+SLAsyncImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SLAsyncImageView.m"; sourceTree = "<group>"; };
 		CC61248D1C34D49F00744BD1 /* UIColor+HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColor.h"; sourceTree = "<group>"; };
 		CC61248E1C34D49F00744BD1 /* UIColor+HexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColor.m"; sourceTree = "<group>"; };
+		CC637A3A202019C50087F303 /* UIImageView+XYAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+XYAsyncImageView.h"; sourceTree = "<group>"; };
+		CC637A3B202019C50087F303 /* UIImageView+XYAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+XYAsyncImageView.m"; sourceTree = "<group>"; };
+		CC637A3C202019C50087F303 /* XYAsyncImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYAsyncImageCompat.h; sourceTree = "<group>"; };
+		CC637A3D202019C50087F303 /* XYAsyncImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYAsyncImageCompat.m; sourceTree = "<group>"; };
+		CC637A40202019F00087F303 /* XYWebImageDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWebImageDownloader.h; sourceTree = "<group>"; };
+		CC637A41202019F00087F303 /* XYWebImageDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYWebImageDownloader.m; sourceTree = "<group>"; };
+		CC637A4320204B750087F303 /* XYWebImageDownloaderOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		CC637A4420204B750087F303 /* XYWebImageDownloaderOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		CC637A4720204ECC0087F303 /* NSOperationTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperationTestViewController.h; sourceTree = "<group>"; };
+		CC637A4820204ECC0087F303 /* NSOperationTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationTestViewController.m; sourceTree = "<group>"; };
+		CC637A4920204ECC0087F303 /* NSOperationTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NSOperationTestViewController.xib; sourceTree = "<group>"; };
+		CC637A4D20207D310087F303 /* ImageIOTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageIOTestViewController.h; sourceTree = "<group>"; };
+		CC637A4E20207D310087F303 /* ImageIOTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageIOTestViewController.m; sourceTree = "<group>"; };
+		CC637A4F20207D310087F303 /* ImageIOTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageIOTestViewController.xib; sourceTree = "<group>"; };
+		CC637A5220207D530087F303 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		CCC17A431C1A779F0005B29A /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		CCF6FCFE201EECED001F46F2 /* BarrierTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarrierTestViewController.h; sourceTree = "<group>"; };
 		CCF6FCFF201EECED001F46F2 /* BarrierTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarrierTestViewController.m; sourceTree = "<group>"; };
@@ -119,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC637A5320207D530087F303 /* ImageIO.framework in Frameworks */,
 				4EA73B3C19E14296003189D0 /* CoreGraphics.framework in Frameworks */,
 				4EA73B3E19E14296003189D0 /* UIKit.framework in Frameworks */,
 				4EA73B3A19E14296003189D0 /* Foundation.framework in Frameworks */,
@@ -165,6 +195,7 @@
 		4EA73B2D19E14296003189D0 = {
 			isa = PBXGroup;
 			children = (
+				CC316F04204020B00030D015 /* XYWebImage */,
 				4EA73B3F19E14296003189D0 /* tableView */,
 				4EA73B5819E14296003189D0 /* tableViewTests */,
 				4EA73B3819E14296003189D0 /* Frameworks */,
@@ -185,6 +216,7 @@
 		4EA73B3819E14296003189D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC637A5220207D530087F303 /* ImageIO.framework */,
 				4EA73B3919E14296003189D0 /* Foundation.framework */,
 				4EA73B3B19E14296003189D0 /* CoreGraphics.framework */,
 				4EA73B3D19E14296003189D0 /* UIKit.framework */,
@@ -197,23 +229,18 @@
 		4EA73B3F19E14296003189D0 /* tableView */ = {
 			isa = PBXGroup;
 			children = (
+				CC316F0B2041010F0030D015 /* Main */,
 				4EA73B4819E14296003189D0 /* AppDelegate.h */,
 				4EA73B4919E14296003189D0 /* AppDelegate.m */,
 				CCC17A431C1A779F0005B29A /* Common.h */,
-				4E1A6F7C1BC7D15100869354 /* MainViewController.h */,
-				4E1A6F7D1BC7D15100869354 /* MainViewController.m */,
-				4E1A6F7E1BC7D15100869354 /* MainViewController.xib */,
-				CC37A36F20133DFB008A821D /* XYTableViewCell.h */,
-				CC37A37020133DFB008A821D /* XYTableViewCell.m */,
-				CC37A37120133DFB008A821D /* XYTableViewCell.xib */,
-
 				4E00079A201E17AC006FA789 /* 321561508582151.jpg */,
-
+				CC316EFE203FC58D0030D015 /* YYWebImageTest */,
+				CC637A4C20207D230087F303 /* ImageIO */,
+				CC637A4620204EB70087F303 /* NSOperation */,
 				CCF6FD03201F2073001F46F2 /* NSURLSesstionTest */,
 				CCF6FCFD201EECCA001F46F2 /* barrier */,
-
-				CC37A38820134A4A008A821D /* SLAsyncImageView */,
 				CC0E42731D655A6A00A8F8F5 /* Launch.xib */,
+				CC637A39202019C50087F303 /* XYAsyncImageView */,
 				4EA73B4B19E14296003189D0 /* Images.xcassets */,
 				4EA73B4019E14296003189D0 /* Supporting Files */,
 			);
@@ -256,6 +283,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CC316EFE203FC58D0030D015 /* YYWebImageTest */ = {
+			isa = PBXGroup;
+			children = (
+				CC316EFF203FC58D0030D015 /* YYWebImageTestController.h */,
+				CC316F00203FC58D0030D015 /* YYWebImageTestController.m */,
+				CC316F01203FC58D0030D015 /* YYWebImageTestController.xib */,
+			);
+			path = YYWebImageTest;
+			sourceTree = "<group>";
+		};
+		CC316F04204020B00030D015 /* XYWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				CC316F052040213E0030D015 /* XYWebImageSetter.h */,
+				CC316F062040213E0030D015 /* XYWebImageSetter.m */,
+				CC316F08204025BB0030D015 /* XYWebImageOperation.h */,
+				CC316F09204025BB0030D015 /* XYWebImageOperation.m */,
+			);
+			name = XYWebImage;
+			path = ../XYWebImage;
+			sourceTree = "<group>";
+		};
+		CC316F0B2041010F0030D015 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CC316F0C2041010F0030D015 /* MainViewController.h */,
+				CC316F0D2041010F0030D015 /* MainViewController.m */,
+				CC316F0E2041010F0030D015 /* MainViewController.xib */,
+				CC316F0F2041010F0030D015 /* XYTableViewCell.h */,
+				CC316F102041010F0030D015 /* XYTableViewCell.m */,
+				CC316F112041010F0030D015 /* XYTableViewCell.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		CC37A37420134058008A821D /* YYFPSLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,15 +331,39 @@
 			path = YYFPSLabel;
 			sourceTree = "<group>";
 		};
-		CC37A38820134A4A008A821D /* SLAsyncImageView */ = {
+		CC637A39202019C50087F303 /* XYAsyncImageView */ = {
 			isa = PBXGroup;
 			children = (
-				CC37A38920134A69008A821D /* UIImageView+SLAsyncImageView.h */,
-				CC37A38A20134A69008A821D /* UIImageView+SLAsyncImageView.m */,
-				4E000797201E0C60006FA789 /* SLAsyncImageCompat.h */,
-				4E000798201E0C60006FA789 /* SLAsyncImageCompat.m */,
+				CC637A3A202019C50087F303 /* UIImageView+XYAsyncImageView.h */,
+				CC637A3B202019C50087F303 /* UIImageView+XYAsyncImageView.m */,
+				CC637A3C202019C50087F303 /* XYAsyncImageCompat.h */,
+				CC637A3D202019C50087F303 /* XYAsyncImageCompat.m */,
+				CC637A40202019F00087F303 /* XYWebImageDownloader.h */,
+				CC637A41202019F00087F303 /* XYWebImageDownloader.m */,
+				CC637A4320204B750087F303 /* XYWebImageDownloaderOperation.h */,
+				CC637A4420204B750087F303 /* XYWebImageDownloaderOperation.m */,
 			);
-			path = SLAsyncImageView;
+			path = XYAsyncImageView;
+			sourceTree = "<group>";
+		};
+		CC637A4620204EB70087F303 /* NSOperation */ = {
+			isa = PBXGroup;
+			children = (
+				CC637A4720204ECC0087F303 /* NSOperationTestViewController.h */,
+				CC637A4820204ECC0087F303 /* NSOperationTestViewController.m */,
+				CC637A4920204ECC0087F303 /* NSOperationTestViewController.xib */,
+			);
+			path = NSOperation;
+			sourceTree = "<group>";
+		};
+		CC637A4C20207D230087F303 /* ImageIO */ = {
+			isa = PBXGroup;
+			children = (
+				CC637A4D20207D310087F303 /* ImageIOTestViewController.h */,
+				CC637A4E20207D310087F303 /* ImageIOTestViewController.m */,
+				CC637A4F20207D310087F303 /* ImageIOTestViewController.xib */,
+			);
+			path = ImageIO;
 			sourceTree = "<group>";
 		};
 		CCF6FCFD201EECCA001F46F2 /* barrier */ = {
@@ -385,14 +471,17 @@
 				4E9EAE4D19E3EDC0005C228B /* defaultAvatar.png in Resources */,
 				4E9EAE7019E40BEB005C228B /* text_bg.png in Resources */,
 				4ED309BF1BC7D82C00790631 /* apple.jpg in Resources */,
+				CC316F03203FC58D0030D015 /* YYWebImageTestController.xib in Resources */,
 				CCF6FD02201EECED001F46F2 /* BarrierTestViewController.xib in Resources */,
 				4E9EAE4E19E3EDC0005C228B /* defaultAvatar@2x.png in Resources */,
+				CC316F132041010F0030D015 /* MainViewController.xib in Resources */,
+				CC316F152041010F0030D015 /* XYTableViewCell.xib in Resources */,
 				CC0E42741D655A6A00A8F8F5 /* Launch.xib in Resources */,
-				4E1A6F801BC7D15100869354 /* MainViewController.xib in Resources */,
 				4EA73B4419E14296003189D0 /* InfoPlist.strings in Resources */,
+				CC637A4B20204ECC0087F303 /* NSOperationTestViewController.xib in Resources */,
 				4E9EAE7119E40BEB005C228B /* text_bg@2x.png in Resources */,
-				CC37A37320133DFB008A821D /* XYTableViewCell.xib in Resources */,
 				4EA73B4C19E14296003189D0 /* Images.xcassets in Resources */,
+				CC637A5120207D310087F303 /* ImageIOTestViewController.xib in Resources */,
 				CCF6FD08201F2082001F46F2 /* NSURLSesstionTestViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,7 +527,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FC636CDAB135F2C9BBF7B0D8 /* [CP] Embed Pods Frameworks */ = {
@@ -463,20 +552,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC637A4A20204ECC0087F303 /* NSOperationTestViewController.m in Sources */,
 				4EA73B4A19E14296003189D0 /* AppDelegate.m in Sources */,
-				4E000799201E0C60006FA789 /* SLAsyncImageCompat.m in Sources */,
-				4E1A6F7F1BC7D15100869354 /* MainViewController.m in Sources */,
 				CC37A37920134058008A821D /* YYFPSLabel.m in Sources */,
+				CC316F142041010F0030D015 /* XYTableViewCell.m in Sources */,
+				CC316F122041010F0030D015 /* MainViewController.m in Sources */,
+				CC316F0A204025BB0030D015 /* XYWebImageOperation.m in Sources */,
 				4E7D1FC01BD0A0E900B84BBE /* NSTimer+Addition.m in Sources */,
+				CC637A3F202019C50087F303 /* XYAsyncImageCompat.m in Sources */,
+				CC316F072040213E0030D015 /* XYWebImageSetter.m in Sources */,
+				CC637A42202019F00087F303 /* XYWebImageDownloader.m in Sources */,
 				CCF6FD01201EECED001F46F2 /* BarrierTestViewController.m in Sources */,
-				CC37A37220133DFB008A821D /* XYTableViewCell.m in Sources */,
 				CC37A37A20134058008A821D /* YYWeakProxy.m in Sources */,
+				CC637A3E202019C50087F303 /* UIImageView+XYAsyncImageView.m in Sources */,
 				CC37A37D20134085008A821D /* XYSelfTestTool.m in Sources */,
 				CCF6FD07201F2082001F46F2 /* NSURLSesstionTestViewController.m in Sources */,
+				CC637A4520204B750087F303 /* XYWebImageDownloaderOperation.m in Sources */,
+				CC637A5020207D310087F303 /* ImageIOTestViewController.m in Sources */,
 				4EA73B4619E14296003189D0 /* main.m in Sources */,
 				4E7D1FC21BD0A0E900B84BBE /* UIFactionary.m in Sources */,
+				CC316F02203FC58D0030D015 /* YYWebImageTestController.m in Sources */,
 				CC61248F1C34D49F00744BD1 /* UIColor+HexColor.m in Sources */,
-				CC37A38B20134A69008A821D /* UIImageView+SLAsyncImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

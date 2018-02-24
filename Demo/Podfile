@@ -3,4 +3,5 @@ platform :ios, '7.0' #手机的系统
 target 'tableView' do
     pod 'SDWebImage'
     pod 'AFNetworking'
+    pod 'YYWebImage'
 end

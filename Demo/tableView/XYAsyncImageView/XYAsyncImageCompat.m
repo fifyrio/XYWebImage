@@ -6,8 +6,8 @@
 //  Copyright © 2018年 Kingnet. All rights reserved.
 //
 
-#import "SLAsyncImageCompat.h"
+#import "XYAsyncImageCompat.h"
 
-@implementation SLAsyncImageCompat
+@implementation XYAsyncImageCompat
 
 @end
