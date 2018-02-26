@@ -7,5 +7,6 @@
 - RunLoop(runloop闲下来，进行异步渲染)
 - GCD异步下载图片
 - [VVeboTableViewDemo](https://github.com/johnil/VVeboTableViewDemo)VS[SDWebImage](https://github.com/rs/SDWebImage)VS[YYAsyncLayer]()VS[AsyncDisplayKit](https://github.com/facebookarchive/AsyncDisplayKit)
+- NSURLSession代替NSURLConnection
 
 
