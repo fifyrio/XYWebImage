@@ -9,6 +9,7 @@
 #import "YYWebImageTestController.h"
 #import <YYWebImage.h>
 #import "XYWebImageOperation.h"
+#import "UIImageView+XYWebImage.h"
 
 typedef NS_OPTIONS(NSUInteger, XYWebImageOperationOption){
     XYWebImageOperationOption1 = 0,
@@ -19,7 +20,7 @@ typedef NS_OPTIONS(NSUInteger, XYWebImageOperationOption){
 
 @interface YYWebImageTestController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
+@property (nonatomic, strong) XYWebImageOperation *operation;
 @end
 
 @implementation YYWebImageTestController
@@ -46,10 +47,13 @@ typedef NS_OPTIONS(NSUInteger, XYWebImageOperationOption){
 }
 
 - (IBAction)onclickRun:(id)sender {
+    self.imageView.image = nil;
+    
     /*
-    NSString *url = @"http://5b0988e595225.cdn.sohucs.com/images/20171208/f394d60ed1a047d89561a1a7326c0f01.png";
-    [self.imageView yy_setImageWithURL:[NSURL URLWithString:url] options:YYWebImageOptionProgressive ];
-    */
+//    NSString *url = @"https://i.pinimg.com/1200x/2e/0c/c5/2e0cc5d86e7b7cd42af225c29f21c37f.jpg";
+    NSString *url = @"http://cc.cocimg.com/api/uploads/20170707/1499394752139363.png";
+    [self.imageView yy_setImageWithURL:[NSURL URLWithString:url] options:YYWebImageOptionProgressive];
+   */
     
     /*
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
@@ -68,6 +72,7 @@ typedef NS_OPTIONS(NSUInteger, XYWebImageOperationOption){
     [operation start];
      */
     
+    /*
     XYWebImageOperationOption op = XYWebImageOperationOption1;
     NSLog(@"%ld", op);
     
@@ -79,7 +84,57 @@ typedef NS_OPTIONS(NSUInteger, XYWebImageOperationOption){
     
     op = XYWebImageOperationOption4;
     NSLog(@"%ld", XYWebImageOperationOption3 | XYWebImageOperationOption4);
+     */
+    
+    /*
+    NSString *url = @"https://i.pinimg.com/1200x/2e/0c/c5/2e0cc5d86e7b7cd42af225c29f21c37f.jpg";
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    */
+    
+    /*
+//    NSString *url = @"https://i.pinimg.com/1200x/2e/0c/c5/2e0cc5d86e7b7cd42af225c29f21c37f.jpg";
+    NSString *url = @"http://cc.cocimg.com/api/uploads/20170707/1499394752139363.png";
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15];    
+    _operation = [[XYWebImageOperation alloc] initWithRequest:request];
+    [_operation start];
+    
+    __weak __typeof(self)_self = self;
+    [_operation setCompletionBlock:^(UIImage * _Nullable image, NSError * _Nullable error) {
+        __strong typeof(_self) self = _self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = image;
+        });
+    }];
+    */
+    
+    /*
+    UIImage *oriImage = [UIImage imageNamed:@"lena.jpg"];
+    oriImage = [oriImage yy_imageByBlurRadius:0 tintColor:nil tintMode:0 saturation:1 maskImage:nil];
+    self.imageView.image = oriImage;
+     */
+
+    /*
+    static int32_t counter = 0;
+    int32_t cur = OSAtomicIncrement32(&counter);
+    NSLog(@"");
+     */
+    
+    /*
+    dispatch_queue_t queue = dispatch_queue_create("com.will.image.decode", DISPATCH_QUEUE_SERIAL);
+    for (int i = 0; i < 10; i ++) {
+        dispatch_sync(queue, ^{
+            NSLog(@"%@ - %d", [NSThread currentThread],i);
+                  });
+    }
+    */
+    
+    //    NSString *url = @"https://i.pinimg.com/1200x/2e/0c/c5/2e0cc5d86e7b7cd42af225c29f21c37f.jpg";
+    NSString *url = @"http://cc.cocimg.com/api/uploads/20170707/1499394752139363.png";
+    [self.imageView xy_setImageWithURL:[NSURL URLWithString:url] placeholder:nil options:nil];
 }
+
+
 
 - (IBAction)onclickClear:(id)sender {
     YYImageCache *cache = [YYWebImageManager sharedManager].cache;
@@ -87,6 +142,18 @@ typedef NS_OPTIONS(NSUInteger, XYWebImageOperationOption){
     // clear cache
     [cache.memoryCache removeAllObjects];
     [cache.diskCache removeAllObjects];
+    
+    NSUInteger memoryCapacity = [[NSURLCache sharedURLCache] memoryCapacity];
+    NSUInteger currentMemoryUsage = [[NSURLCache sharedURLCache] currentMemoryUsage];
+    NSUInteger diskCapacity = [[NSURLCache sharedURLCache] diskCapacity];
+    NSUInteger currentDiskUsage = [[NSURLCache sharedURLCache] currentDiskUsage];
+    
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    memoryCapacity = [[NSURLCache sharedURLCache] memoryCapacity];
+    currentMemoryUsage = [[NSURLCache sharedURLCache] currentMemoryUsage];
+    diskCapacity = [[NSURLCache sharedURLCache] diskCapacity];    
+    currentDiskUsage = [[NSURLCache sharedURLCache] currentDiskUsage];
+    NSLog(@"");
 }
 
 @end

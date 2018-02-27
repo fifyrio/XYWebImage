@@ -1,14 +1,14 @@
 //
-//  XYWebImageSetter.m
+//  _XYWebImageSetter.m
 //  tableView
 //
-//  Created by wuw on 2018/2/23.
+//  Created by wuw on 2018/2/27.
 //  Copyright © 2018年 Kingnet. All rights reserved.
 //
 
-#import "XYWebImageSetter.h"
+#import "_XYWebImageSetter.h"
 
-@interface XYWebImageSetter (){
+@interface _XYWebImageSetter(){
     dispatch_semaphore_t _lock;
     NSURL *_imageURL;
     NSOperation *_operation;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation XYWebImageSetter
+@implementation _XYWebImageSetter
 
 - (instancetype)init
 {

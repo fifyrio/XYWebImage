@@ -23,7 +23,12 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-            
+    
+//    NSUInteger memorySize = 1024 * 1024 * 64;
+//    NSURLCache *sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:memorySize diskCapacity:memorySize diskPath:nil];
+//    [NSURLCache setSharedURLCache:sharedCache];
+//    NSLog(@"cap: %ld", [[NSURLCache sharedURLCache] diskCapacity]);
+    
     YYWebImageTestController* mainVC = [[YYWebImageTestController alloc] init];
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:mainVC];
     self.window.rootViewController = navVC;
