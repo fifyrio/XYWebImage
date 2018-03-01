@@ -10,6 +10,8 @@
 #import <YYWebImage.h>
 #import "XYWebImageOperation.h"
 #import "UIImageView+XYWebImage.h"
+#import <pthread.h>
+#import "UIImage+XYWebImage.h"
 
 typedef NS_OPTIONS(NSUInteger, XYWebImageOperationOption){
     XYWebImageOperationOption1 = 0,
@@ -51,7 +53,7 @@ typedef NS_OPTIONS(NSUInteger, XYWebImageOperationOption){
     
     /*
 //    NSString *url = @"https://i.pinimg.com/1200x/2e/0c/c5/2e0cc5d86e7b7cd42af225c29f21c37f.jpg";
-    NSString *url = @"http://cc.cocimg.com/api/uploads/20170707/1499394752139363.png";
+    NSString *url = @"http://imgsrc.baidu.com/imgad/pic/item/cc11728b4710b912c0057563c9fdfc0393452262.jpg";
     [self.imageView yy_setImageWithURL:[NSURL URLWithString:url] options:YYWebImageOptionProgressive];
    */
     
@@ -110,9 +112,9 @@ typedef NS_OPTIONS(NSUInteger, XYWebImageOperationOption){
     
     /*
     UIImage *oriImage = [UIImage imageNamed:@"lena.jpg"];
-    oriImage = [oriImage yy_imageByBlurRadius:0 tintColor:nil tintMode:0 saturation:1 maskImage:nil];
+    oriImage = [oriImage xy_imageByBlurRadius:10 tintColor:nil tintMode:0 saturation:1 maskImage:nil];
     self.imageView.image = oriImage;
-     */
+    */
 
     /*
     static int32_t counter = 0;
@@ -129,9 +131,12 @@ typedef NS_OPTIONS(NSUInteger, XYWebImageOperationOption){
     }
     */
     
-    //    NSString *url = @"https://i.pinimg.com/1200x/2e/0c/c5/2e0cc5d86e7b7cd42af225c29f21c37f.jpg";
-    NSString *url = @"http://cc.cocimg.com/api/uploads/20170707/1499394752139363.png";
-    [self.imageView xy_setImageWithURL:[NSURL URLWithString:url] placeholder:nil options:nil];
+    /**/
+    NSString *url = @"https://i.pinimg.com/1200x/2e/0c/c5/2e0cc5d86e7b7cd42af225c29f21c37f.jpg";
+    url = @"http://imgsrc.baidu.com/imgad/pic/item/cc11728b4710b912c0057563c9fdfc0393452262.jpg";
+//    NSString *url = @"http://cc.cocimg.com/api/uploads/20170707/1499394752139363.png";
+    [self.imageView xy_setImageWithURL:[NSURL URLWithString:url] placeholder:nil options:XYWebImageOptionProgressive];
+     
 }
 
 

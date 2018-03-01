@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "XYWebImageManager.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface XYWebImageOperation : NSOperation
 
 @property (nonatomic, strong, readonly) NSURLRequest *request;  ///< The image URL request.
@@ -22,8 +24,13 @@
  */
 @property (assign, nonatomic) NSInteger expectedSize;
 
-- (instancetype)initWithRequest:(NSURLRequest *)request;
-
-@property (nonatomic, copy) XYWebImageCompletionBlock completionBlock;
+- (instancetype)initWithRequest:(NSURLRequest *)request
+                        options:(XYWebImageOptions)options
+                          cache:(XYImageCache *)cache
+                       cacheKey:(NSString *)cacheKey
+                       progress:(XYWebImageProgressBlock)progress
+                     completion:(XYWebImageCompletionBlock)completion;
 
 @end
+
+NS_ASSUME_NONNULL_END

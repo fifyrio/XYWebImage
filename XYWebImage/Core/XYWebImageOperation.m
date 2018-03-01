@@ -8,11 +8,8 @@
 
 #import "XYWebImageOperation.h"
 #import <libkern/OSAtomic.h>
-
-#warning 待定
-#import <ImageIO/ImageIO.h>
-#import <CoreFoundation/CoreFoundation.h>
-#import "UIImage+YYWebImage.h"
+#import "XYImageDecoder.h"
+#import "UIImage+XYWebImage.h"
 
 @interface _XYWebImageWeakProxy: NSProxy
 
@@ -80,10 +77,6 @@
 @end
 
 @interface XYWebImageOperation ()<NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
-#warning 待定
-{
-    CGImageSourceRef _incrementalImgSource;
-}
 
 @property (readwrite, getter=isExecuting) BOOL executing;
 @property (readwrite, getter=isFinished) BOOL finished;
@@ -95,8 +88,10 @@
 @property (nonatomic, strong) NSURLSessionTask *dataTask;
 
 @property (nonatomic, strong) NSMutableData *data;
-@property (nonatomic, copy) XYWebImageProgressBlock progressBlock;
+@property (nonatomic, copy) XYWebImageProgressBlock progress;
+@property (nonatomic, copy) XYWebImageCompletionBlock completion;
 
+@property (nonatomic, strong) XYImageDecoder *progressDecoder;
 
 
 @end
@@ -107,13 +102,18 @@
 @synthesize finished = _finished;
 @synthesize cancelled = _cancelled;
 
-#pragma mark - Init
+#pragma mark - Life cycle
 - (instancetype)init{
     @throw [NSException exceptionWithName:@"XYWebImageOperation init error" reason:@"XYWebImageOperation must be initialized with a request. Use the method initWithRequest to init." userInfo:nil];
-    return [self initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@""]]];
+    return [self initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@""]] options:0 cache:nil cacheKey:nil progress:nil completion:nil];
 }
 
-- (instancetype)initWithRequest:(NSURLRequest *)request{
+- (instancetype)initWithRequest:(NSURLRequest *)request
+                        options:(XYWebImageOptions)options
+                          cache:(XYImageCache *)cache
+                       cacheKey:(NSString *)cacheKey
+                       progress:(XYWebImageProgressBlock)progress
+                     completion:(XYWebImageCompletionBlock)completion {
     self = [super init];
     if (self) {
         _request = request;
@@ -121,8 +121,27 @@
         _executing = NO;
         _finished = NO;
         _cancelled = NO;
+        _options = options;
+        _progress = progress;
+        _completion = completion;
     }
     return self;
+}
+
+- (void)dealloc{
+    [_lock lock];
+    if ([self isExecuting]) {
+        self.cancelled = YES;
+        self.finished = YES;
+        if (_session) {
+            [_session invalidateAndCancel];
+        }
+        
+        if (_completion) {
+            _completion(nil, _request.URL, nil);
+        }
+    }
+    [_lock unlock];
 }
 
 #pragma mark - thread
@@ -208,6 +227,29 @@
     [_lock unlock];
 }
 
+- (void)_didRecevieImageFromWeb:(UIImage *)image{
+    @autoreleasepool{
+        [_lock lock];
+        if (![self isCancelled]) {
+            _data = nil;
+            NSError *error = nil;
+            
+            if (!image) {
+                error = [NSError errorWithDomain:@"com.will.image" code:-1 userInfo:@{ NSLocalizedDescriptionKey : @"Web image decode fail." }];
+            }
+            
+            if (_completion) _completion(image, _request.URL, error);
+            [self _finish];
+        }
+        [_lock unlock];
+    }
+}
+
+- (void)_finish {
+    self.executing = NO;
+    self.finished = YES;
+}
+
 #pragma mark NSURLSessionDataDelegate
 
 - (void)URLSession:(NSURLSession *)session
@@ -227,18 +269,15 @@ didReceiveResponse:(NSURLResponse *)response
     
     if (isValid) {
         
-#warning 待定
-        _incrementalImgSource = CGImageSourceCreateIncremental(NULL);
-        
         NSInteger expected = (NSInteger)response.expectedContentLength;
         expected = expected > 0 ? expected : 0;
         _expectedSize = expected;
         if (_expectedSize < 0) _expectedSize = -1;
         _data = [NSMutableData dataWithCapacity:_expectedSize > 0? _expectedSize : 0];
         
-        if (_progressBlock) {
+        if (_progress) {
             [_lock lock];
-            if (![self isCancelled]) _progressBlock(0, _expectedSize);
+            if (![self isCancelled]) _progress(0, _expectedSize);
             [_lock unlock];
         }
     }else{
@@ -252,25 +291,51 @@ didReceiveResponse:(NSURLResponse *)response
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
     NSLog(@"didReceiveData");
-    /**/
-    [_data appendData:data];
-    CGImageSourceUpdateData(_incrementalImgSource, (CFDataRef)_data, NO);
-    CGImageRef imageRef = CGImageSourceCreateImageAtIndex(_incrementalImgSource, 0, NULL);
-    UIImage *image = [UIImage imageWithCGImage:imageRef];
-     
-    
-    /*
-    CGFloat radius = 32;
-    radius *= 1.0 / (3 * _data.length / (CGFloat)_expectedSize + 0.6) - 0.25;
-    image = [image yy_imageByBlurRadius:radius tintColor:nil tintMode:0 saturation:1 maskImage:nil];
-    NSLog(@"r: %0.1f",radius);
-     */
-    
-    /**/
-    if (self.completionBlock) {
-        self.completionBlock(image, nil);
+    @autoreleasepool{
+        [_lock lock];
+        BOOL canceled = [self isCancelled];
+        [_lock unlock];
+        if (canceled) return;
+        
+        if (data) [_data appendData:data];
+        if (_progress) {
+            [_lock lock];
+            if (![self isCancelled]) {
+                _progress(_data.length, _expectedSize);
+            }
+            [_lock unlock];
+        }
+        
+        if (!_progressDecoder) {
+            _progressDecoder = [[XYImageDecoder alloc] initWithScale:[UIScreen mainScreen].scale];
+        }
+        [_progressDecoder updateData:data isFinal:NO];
+        
+        if (_progressDecoder.type == XYImageTypeJPEG) {//// only support progressive JPEG
+            if (_options & XYWebImageOptionProgressive) {
+                UIImage *image = [_progressDecoder getRenderedImage];
+                
+                if (_options & XYWebImageOptionProgressiveBlur) {
+                    //给image加高斯模糊
+                    
+                    CGFloat radius = 32;
+                    if (_expectedSize > 0) {
+                        radius *= 1.0 / (3 * _data.length / (CGFloat)_expectedSize + 0.6) - 0.25;
+                    }
+                    image = [image xy_imageByBlurRadius:radius tintColor:nil tintMode:0 saturation:1 maskImage:nil];
+                }
+                
+                if (image) {
+                    [_lock lock];
+                    if (![self isCancelled]) {
+                        NSError *error = nil;
+                        _completion(image, _request.URL, error);
+                    }
+                    [_lock unlock];
+                }
+            }
+        }
     }
-    CGImageRelease(imageRef);
 }
 
 #pragma mark NSURLSessionTaskDelegate
@@ -287,16 +352,23 @@ didReceiveResponse:(NSURLResponse *)response
     NSLog(@"didCompleteWithError");
     @autoreleasepool{
         [_lock lock];
-        __weak typeof(self) _self = self;
-        dispatch_async([[self class] _imageProcessQueue], ^{
-            __strong typeof(_self) self = _self;
-            CGImageSourceUpdateData(_incrementalImgSource, (CFDataRef)_data, YES);
-            CGImageRef imageRef = CGImageSourceCreateImageAtIndex(_incrementalImgSource, 0, NULL);
-            if (self.completionBlock) {
-                self.completionBlock([UIImage imageWithCGImage:imageRef], nil);
+        if (![self isCancelled]) {
+            if (error) {
+                _completion(nil,_request.URL, error);
+            }else{
+                __weak typeof(self) _self = self;
+                dispatch_async([[self class] _imageProcessQueue], ^{
+                    __strong typeof(_self) self = _self;
+                    
+                    XYImageDecoder *decoder = [XYImageDecoder decoderWithData:self.data scale:[UIScreen mainScreen].scale];
+                    UIImage *image = [decoder getRenderedImage];
+                    
+                    
+                    [self performSelector:@selector(_didRecevieImageFromWeb:) onThread:[[self class] _networkThread] withObject:image waitUntilDone:NO];
+                });
             }
-            CGImageRelease(imageRef);
-        });        
+        }
+        
         [_lock unlock];
     }
     
