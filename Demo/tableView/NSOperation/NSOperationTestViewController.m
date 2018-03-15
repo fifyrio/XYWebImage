@@ -21,6 +21,7 @@
 }
 
 - (IBAction)onclickRun:(id)sender {
+    /*
     NSOperationQueue *queue = [NSOperationQueue new];
     
     dispatch_apply(6, dispatch_get_global_queue(0, 0), ^(size_t i) {
@@ -30,7 +31,23 @@
         op.name = [NSString stringWithFormat:@"XYWebImageDownloaderOperation-%zu", i];
         [queue addOperation:op];
     });
+    */
     
+    NSOperationQueue *queue = [NSOperationQueue new];
+    queue.maxConcurrentOperationCount = 1;
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"op1-%@", [NSThread currentThread]);
+        sleep(1);
+    }];
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"op2-%@", [NSThread currentThread]);
+        sleep(1);
+    }];
+    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"op3-%@", [NSThread currentThread]);
+        sleep(1);
+    }];
+    [queue addOperations:@[op1, op2, op3] waitUntilFinished:NO];
 }
 
 @end

@@ -131,11 +131,17 @@ typedef NS_OPTIONS(NSUInteger, XYWebImageOperationOption){
     }
     */
     
-    /**/
+    /*
     NSString *url = @"https://i.pinimg.com/1200x/2e/0c/c5/2e0cc5d86e7b7cd42af225c29f21c37f.jpg";
     url = @"http://imgsrc.baidu.com/imgad/pic/item/cc11728b4710b912c0057563c9fdfc0393452262.jpg";
 //    NSString *url = @"http://cc.cocimg.com/api/uploads/20170707/1499394752139363.png";
     [self.imageView xy_setImageWithURL:[NSURL URLWithString:url] placeholder:nil options:XYWebImageOptionProgressive];
+     */
+    
+    NSString *url = @"https://i.pinimg.com/1200x/2e/0c/c5/2e0cc5d86e7b7cd42af225c29f21c37f.jpg";
+    url = @"http://imgsrc.baidu.com/imgad/pic/item/cc11728b4710b912c0057563c9fdfc0393452262.jpg";
+    //    NSString *url = @"http://cc.cocimg.com/api/uploads/20170707/1499394752139363.png";
+    [self.imageView yy_setImageWithURL:[NSURL URLWithString:url] placeholder:[UIImage imageNamed:@"people"]];
      
 }
 
